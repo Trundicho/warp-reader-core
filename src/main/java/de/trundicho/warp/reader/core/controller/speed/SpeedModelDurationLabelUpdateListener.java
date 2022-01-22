@@ -1,7 +1,7 @@
 package de.trundicho.warp.reader.core.controller.speed;
 
-import de.trundicho.warp.reader.core.model.speed.DurationCalculator;
 import de.trundicho.warp.reader.core.model.speed.DelayModel;
+import de.trundicho.warp.reader.core.model.speed.DurationCalculator;
 import de.trundicho.warp.reader.core.view.api.widgets.NumberLabelWidget;
 
 public class SpeedModelDurationLabelUpdateListener implements DelayModel.SpeedUpdateListener {

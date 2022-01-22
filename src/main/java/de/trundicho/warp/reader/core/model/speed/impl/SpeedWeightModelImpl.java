@@ -1,9 +1,9 @@
 package de.trundicho.warp.reader.core.model.speed.impl;
 
-import de.trundicho.warp.reader.core.model.speed.SpeedWeightModel;
-
 import java.util.Collection;
 import java.util.HashSet;
+
+import de.trundicho.warp.reader.core.model.speed.SpeedWeightModel;
 
 public final class SpeedWeightModelImpl implements SpeedWeightModel {
 	private double sentenceSpeedWeight;

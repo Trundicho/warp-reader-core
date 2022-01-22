@@ -1,5 +1,11 @@
 package de.trundicho.warp.reader.core;
 
+import java.util.List;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 import de.trundicho.warp.reader.core.controller.WarpInitializer;
 import de.trundicho.warp.reader.core.controller.WarpUpdater;
 import de.trundicho.warp.reader.core.model.playmode.PlayModeModel;
@@ -16,13 +22,8 @@ import de.trundicho.warp.reader.core.model.warpword.TextSplitter;
 import de.trundicho.warp.reader.core.model.warpword.impl.WordLengthModelImpl;
 import de.trundicho.warp.reader.core.view.api.timer.WarpTimer;
 import de.trundicho.warp.reader.core.view.api.widgets.NumberLabelWidget;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
-import java.util.List;
-
-class WarpInitializerTest {
+public class WarpInitializerTest {
     private static final int DEFAULT_NUMBER_OF_CHARS_TO_DISPLAY = 15;
     private static final int UPDATES_PER_MINUTE = 250;
     private WarpInitializer warpInitializer;
@@ -52,7 +53,7 @@ class WarpInitializerTest {
     void test_initialization_of_WarpReader_expect_warped_default_text_in_a_list() throws InterruptedException {
         warpInitializer.initAndStartWarping(INITIAL_TEXT);
         final List<String> warpedTextLines = warpTextLabelUpdater.getWarpedTextLines();
-        Thread.currentThread().sleep(TEST_WARP_DURATION_IN_MS);
+        Thread.sleep(TEST_WARP_DURATION_IN_MS);
         checkExpectationThatDefaultTextHasBeenWarped(warpedTextLines);
     }
 
@@ -60,7 +61,7 @@ class WarpInitializerTest {
     void test_position_update_of_WarpReader_expect_center_word() throws InterruptedException {
         warpInitializer.initAndStartWarping(INITIAL_TEXT);
         final List<String> warpedTextLines = warpTextLabelUpdater.getWarpedTextLines();
-        Thread.currentThread().sleep(TEST_WARP_DURATION_IN_MS);
+        Thread.sleep(TEST_WARP_DURATION_IN_MS);
         playModeModel.setPlayState(PlayState.PAUSE);
         playModel.setCurrentPosition(50);
 
@@ -72,11 +73,11 @@ class WarpInitializerTest {
     void test_after_initialization_of_WarpReader_expect_warped_input_text_in_a_list() throws InterruptedException {
         warpInitializer.initAndStartWarping(INITIAL_TEXT);
         final List<String> warpedTextLines = warpTextLabelUpdater.getWarpedTextLines();
-        Thread.currentThread().sleep(TEST_WARP_DURATION_IN_MS);
+        Thread.sleep(TEST_WARP_DURATION_IN_MS);
         checkExpectationThatDefaultTextHasBeenWarped(warpedTextLines);
         String secondText = "This is a test text. It should be warped after the initialization.";
         warpInitializer.initAndStartWarping(secondText);
-        Thread.currentThread().sleep(TEST_WARP_DURATION_IN_MS);
+        Thread.sleep(TEST_WARP_DURATION_IN_MS);
         int i = 14;
         Assertions.assertEquals("This is a test", warpedTextLines.get(i++));
         Assertions.assertEquals("text. It should", warpedTextLines.get(i++));

@@ -1,9 +1,9 @@
 package de.trundicho.warp.reader.core.model.speed.impl;
 
-import de.trundicho.warp.reader.core.model.speed.DelayModel;
-
 import java.util.Collection;
 import java.util.HashSet;
+
+import de.trundicho.warp.reader.core.model.speed.DelayModel;
 
 /**
  * Created by angeloromito on 11.04.14.
@@ -16,7 +16,7 @@ public final class DelayModelImpl implements DelayModel {
     public DelayModelImpl(final double defaultDelay) {
         this.delay = defaultDelay;
         this.defaultDelay = defaultDelay;
-        listeners = new HashSet<SpeedUpdateListener>();
+        listeners = new HashSet<>();
     }
 
     @Override

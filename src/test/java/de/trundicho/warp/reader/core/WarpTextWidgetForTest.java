@@ -1,9 +1,9 @@
 package de.trundicho.warp.reader.core;
 
-import de.trundicho.warp.reader.core.view.api.widgets.WarpTextWidget;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import de.trundicho.warp.reader.core.view.api.widgets.WarpTextWidget;
 
 class WarpTextWidgetForTest implements WarpTextWidget {
 

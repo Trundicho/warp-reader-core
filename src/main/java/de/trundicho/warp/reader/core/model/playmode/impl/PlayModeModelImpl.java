@@ -1,10 +1,10 @@
 package de.trundicho.warp.reader.core.model.playmode.impl;
 
-import de.trundicho.warp.reader.core.model.playmode.PlayModeModel;
-import de.trundicho.warp.reader.core.model.playmode.PlayState;
-
 import java.util.Collection;
 import java.util.HashSet;
+
+import de.trundicho.warp.reader.core.model.playmode.PlayModeModel;
+import de.trundicho.warp.reader.core.model.playmode.PlayState;
 
 /**
  * Created by angeloromito on 14.04.14.

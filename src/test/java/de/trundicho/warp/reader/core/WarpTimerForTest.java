@@ -1,10 +1,10 @@
 package de.trundicho.warp.reader.core;
 
-import de.trundicho.warp.reader.core.controller.WarpUpdater;
-import de.trundicho.warp.reader.core.view.api.timer.WarpTimer;
-
 import java.util.Timer;
 import java.util.TimerTask;
+
+import de.trundicho.warp.reader.core.controller.WarpUpdater;
+import de.trundicho.warp.reader.core.view.api.timer.WarpTimer;
 
 class WarpTimerForTest implements WarpTimer {
     private Timer timer;
@@ -13,13 +13,7 @@ class WarpTimerForTest implements WarpTimer {
 
     WarpTimerForTest(WarpUpdater warpUpdater) {
         timer = createTimer();
-        runnable = new Runnable() {
-
-            @Override
-            public void run() {
-                warpUpdater.doNextWarp();
-            }
-        };
+        runnable = warpUpdater::doNextWarp;
 
     }
 
